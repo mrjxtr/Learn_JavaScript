@@ -118,7 +118,7 @@ else if (false)
 else
     console.log("that is okay")
 
-//ternary condition or "one liner"
+// ternary condition or "one liner"
 const cond = 2 < 3 ? "Okay cool" : "Not cool"
 console.log(cond)
 
@@ -168,7 +168,6 @@ const arr7 = Array.from("hello")
 arr7.shift() // remove first value of an array
 console.log(arr7)
 
-
 const arr8 = Array.from("hello")
 arr8.unshift('new') // add value to start of an array
 console.log(arr8)
@@ -188,4 +187,130 @@ console.log(arr11)
 const arr12 = arr9.splice(1, 2) // remove a section of the array
 console.log(arr12)
 console.log(arr9)
+
+// ? Array Desctructing and Spread (unpack values from an array)
+
+const [dx, dy] = [1, 2] // Desctructing
+
+console.log(dx, dy)
+
+const [sx, sy, ...sz] = [1, 2, 3, 4, 5] // Spread
+
+console.log(sx, sy, sz)
+
+const cx = [1, 2, 3, 4] // use spread to make a copy of an array that will not be modified
+const cy = [...cx] // even when the reference is modified
+
+cy.push("hello")
+
+console.log(cx, cy)
+
+// ? While loops
+
+do { // do while loop
+    console.log("run")
+    break
+} while (true)
+
+while (true) { // simple while loop
+    console.log("hello")
+    break
+}
+
+/*
+ * while (true) console.log("hello world") // ! Naked while loop (this is an infinit loop)
+*/
+
+// ? For loop
+
+for (let i = 0; i < 10; i++) { // incrementing i up to 10 increments
+    console.log(i)
+}
+
+const arrf = [1, 9, 4, 6]
+
+for (let i = 0; i < arrf.length; i++) { // incrementing on an iterable (an array in this e.g)
+    console.log(arrf[1])
+}
+
+for (let value of arrf) { // different syntax for iterating through something
+    console.log(value)
+}
+
+for (let [idx, value] of arrf.entries()) { // printing value and index of iterable
+    console.log(idx, value)
+}
+
+// ? Objects (JSON - JavaScript Object Notation)
+
+const obj = { // anything inside the "{}" of a variable is an object
+    name: "Jester", // can contain values
+    age: 28,
+    deleteThis: 'yes',
+    sayHello: function() { // can contain fucntions
+        return "hello"
+    },
+    career: { // addign an object inside an object
+        yrs_exp: 10,
+        level: 'Senior'
+    }
+}
+
+obj.name = 'Jxtr' // changing the value of a property
+obj['name'] = 'MrJxtr' // other way to acces properties
+obj.job = 'software dev' // adding new properties in the object
+obj.arr = [1, 2, 3, 4] // adding a list as a property
+
+delete obj.deleteThis // delete a property from an object
+
+console.log(Object.keys(obj)) // printing all the keys in the obj
+console.log(Object.values(obj)) // printing all the values in the obj
+
+for (let key in obj) { // looping through keys and values in object
+    console.log(key, obj[key])
+}
+
+for (let [key, value] of Object.entries(obj)) { // different syntax of above
+    console.log(key, value)
+}
+
+const obj2 = {
+    hairColor: 'black',
+    eyeColor: 'brown',
+    randArr: [5, 6, 7]
+}
+
+const obj3 = { ...obj, ...obj2 } // combining 2 objects using spread
+console.log(obj3) // ! Be careful when doing this with "mutable" types
+
+const { hairColor, eyeColor } = obj3 // Desctructing objects
+console.log(hairColor, eyeColor)
+
+// ? Sets (collection of unique values occuring only once of any type)
+
+const mySet = new Set([5, 4, 3, 2]);
+mySet.add(1, 1.5)
+mySet.delete(1.5)
+mySet.has(0)
+mySet.size // check the size of the set
+//mySet.clear() // clears the entire set
+
+console.log(mySet)
+
+for (const value of mySet) { // looping trough the set
+    console.log(value)
+}
+
+const arrs = Array.from(mySet) // converting set to array
+console.log(arrs)
+
+const arrss = [...mySet] // creating array from set
+const arrsss = [...new Set([7, 8, 9])] // creating new array from set
+
+
+
+
+
+
+
 
