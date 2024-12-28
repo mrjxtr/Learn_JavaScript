@@ -1,1 +1,1 @@
-# Learning JavaSript
+# Learning JavaSript (with TypeScript to JavaSript)
